@@ -6,7 +6,7 @@ A modern, responsive landing page template built with Next.js, Tailwind CSS, and
 ## Demo
 
 [Live Demo](https://demo-ecobuddy.vercel.app/)
-Login dengan menggunakan admin@gmail.com dan password admin123, lalu pergi ke halaman habit atau path /admin/habit, terdapat crud untuk demo cloud hosting
+Login dengan menggunakan admin@gmail.com dan password admin123, lalu pergi ke halaman habit atau path /admin/habit, terdapat crud untuk demo cloud hosting, untuk icon terpadat pada lucide react
 
 ## Preview
 
