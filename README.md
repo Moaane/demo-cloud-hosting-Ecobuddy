@@ -5,7 +5,7 @@ A modern, responsive landing page template built with Next.js, Tailwind CSS, and
 
 ## Demo
 
-[Live Demo](https://shadcn-ui-landing-page.vercel.app/)
+[Live Demo](https://demo-ecobuddy.vercel.app/)
 Login dengan menggunakan admin@gmail.com dan password admin123, lalu pergi ke halaman /admin/habit, terdapat crud untuk demo cloud hosting
 
 ## Preview
