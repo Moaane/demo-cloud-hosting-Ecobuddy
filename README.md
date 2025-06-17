@@ -10,4 +10,4 @@ Login dengan menggunakan admin@gmail.com dan password admin123, lalu pergi ke ha
 
 ## Preview
 
-![Preview](./public/page-preview.png)
+![Preview](./public/page-preview-update.png)
