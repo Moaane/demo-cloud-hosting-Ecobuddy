@@ -99,7 +99,7 @@ const Testimonial = () => {
       id="testimonials"
       className="w-full max-w-screen-xl mx-auto py-6 xs:py-12 px-6"
     >
-      <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight">
+      <h2 className="mb-8 xs:mb-14 text-4xl md:text-5xl font-bold text-center tracking-tight text-text">
         Testimonials
       </h2>
       <div className="container w-full mx-auto">
@@ -117,7 +117,7 @@ const Testimonial = () => {
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}
-              className={cn("h-3.5 w-3.5 rounded-full border-2", {
+              className={cn("h-3.5 w-3.5 rounded-full border-2 border-primary-foreground", {
                 "bg-primary border-primary": current === index + 1,
               })}
             />
@@ -133,7 +133,7 @@ const TestimonialCard = ({
 }: {
   testimonial: (typeof testimonials)[number];
 }) => (
-  <div className="mb-8 bg-accent rounded-xl py-8 px-6 sm:py-6">
+  <div className="mb-8 bg-foreground rounded-xl py-8 px-6 sm:py-6">
     <div className="flex items-center justify-between gap-20">
       <div className="hidden lg:block relative shrink-0 aspect-[3/4] max-w-[18rem] w-full bg-muted-foreground/20 rounded-xl">
         <Image
@@ -168,7 +168,7 @@ const TestimonialCard = ({
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="text-lg font-semibold">{testimonial.name}</p>
+              <p className="text-lg text-text font-semibold">{testimonial.name}</p>
               <p className="text-sm text-gray-500">{testimonial.designation}</p>
             </div>
           </div>
@@ -180,7 +180,7 @@ const TestimonialCard = ({
             <StarIcon className="w-5 h-5 fill-muted-foreground stroke-muted-foreground" />
           </div>
         </div>
-        <p className="mt-6 text-lg sm:text-2xl lg:text-[1.75rem] xl:text-3xl leading-normal lg:!leading-normal font-semibold tracking-tight">
+        <p className="mt-6 text-text text-lg sm:text-2xl lg:text-[1.75rem] xl:text-3xl leading-normal lg:!leading-normal font-semibold tracking-tight">
           &quot;{testimonial.testimonial}&quot;
         </p>
         <div className="flex sm:hidden md:flex mt-6 items-center gap-4">
@@ -190,7 +190,7 @@ const TestimonialCard = ({
             </AvatarFallback>
           </Avatar>
           <div>
-            <p className="text-lg font-semibold">{testimonial.name}</p>
+            <p className="text-lg text-text font-semibold">{testimonial.name}</p>
             <p className="text-sm text-gray-500">{testimonial.designation}</p>
           </div>
         </div>

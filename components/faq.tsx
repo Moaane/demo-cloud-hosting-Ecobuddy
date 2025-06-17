@@ -42,11 +42,11 @@ const faq = [
 
 const FAQ = () => {
   return (
-    <div id="faq" className="w-full max-w-screen-xl mx-auto py-8 xs:py-16 px-6">
+    <div id="faq" className="w-full max-w-screen-xl mx-auto py-8 xs:py-16 px-6 text-text">
       <h2 className="md:text-center text-3xl xs:text-4xl md:text-5xl !leading-[1.15] font-bold tracking-tighter">
         Frequently Asked Questions
       </h2>
-      <p className="mt-1.5 md:text-center xs:text-lg text-muted-foreground">
+      <p className="mt-1.5 md:text-center xs:text-lg text-text-foreground">
         Quick answers to common questions about our products and services.
       </p>
 
@@ -60,7 +60,7 @@ const FAQ = () => {
             <AccordionItem
               key={question}
               value={`question-${index}`}
-              className="bg-accent py-1 px-4 rounded-xl border-none !mt-0 !mb-4 break-inside-avoid"
+              className="py-1 px-4 rounded-xl border-none !mt-0 !mb-4 break-inside-avoid bg-foreground"
             >
               <AccordionPrimitive.Header className="flex">
                 <AccordionPrimitive.Trigger

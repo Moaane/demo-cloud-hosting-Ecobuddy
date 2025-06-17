@@ -1,52 +1,40 @@
-import type { Metadata } from "next";
-import { Geist } from "next/font/google";
-import "./globals.css";
-import { ThemeProvider } from "next-themes";
+import type { Metadata } from "next"
+import { Montserrat } from "next/font/google"
+import "./globals.css"
+import { ThemeProvider } from "next-themes"
+import { Toaster } from "@/components/ui/sonner"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const MontserratSans = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-});
+})
 
 export const metadata: Metadata = {
-  title: "Beautiful Shadcn UI Landing Page",
+  title: "Ecobuddy | your new buddy for green lifestyle",
   description:
-    "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
+    "Ecobuddy meet you new buddy for green lifestyle",
   keywords: [
-    "Shadcn UI Landing Page",
-    "Shadcn UI Blocks",
-    "Shadcn UI",
-    "Landing Page",
-    "Tailwind CSS Landing Page",
-    "Beautiful Shadcn UI Landing Page",
-    "Next.js 15 Landing Page",
-    "Simple Landing Page",
-    "Landing Page Template",
-    "Landing Page Design",
+    "Ecobuddy Landing Page",
+    "Green living Landing Page",
   ],
   openGraph: {
     type: "website",
-    siteName: "Shadcn Landing Page",
+    siteName: "Ecobuddy Landing Page",
     locale: "en_US",
-    url: "https://shadcn-landing-page.vercel.app",
+    url: "https://shadcn-landing-page.v",
     title: "Shadcn Landing Page",
     description:
-      "A beautiful landing page built with Shadcn UI, Next.js 15, Tailwind CSS, and Shadcn UI Blocks.",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Shadcn UI Landing Page Preview",
-      },
-    ],
+      "Ecobuddy  Meet your new buddy for green lifestyle",
+    // images: [
+    //   {
+    //     url: "/og-image.jpg",
+    //     width: 1200,
+    //     height: 630,
+    //     alt: "",
+    //   },
+    // ],
   },
-  authors: [
-    {
-      name: "Akash Moradiya",
-      url: "https://shadcnui-blocks.com",
-    },
-  ],
+
   creator: "Akash Moradiya",
   icons: [
     {
@@ -87,20 +75,21 @@ export const metadata: Metadata = {
     follow: true,
   },
   manifest: "/site.webmanifest",
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body className={`${MontserratSans.className} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
-  );
+  )
 }

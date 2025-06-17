@@ -1,14 +1,15 @@
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button"
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
-import { Menu } from "lucide-react";
-import { Logo } from "./logo";
-import { NavMenu } from "./nav-menu";
+} from "@/components/ui/sheet"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
+import { Menu } from "lucide-react"
+import { Logo } from "./logo"
+import { NavMenu } from "./nav-menu"
+import Link from "next/link"
 
 export const NavigationSheet = () => {
   return (
@@ -23,15 +24,22 @@ export const NavigationSheet = () => {
       </SheetTrigger>
       <SheetContent>
         <Logo />
-        <NavMenu orientation="vertical" className="mt-12" />
+        <NavMenu orientation="vertical" className="mt-8" />
 
         <div className="mt-8 space-y-4">
-          <Button variant="outline" className="w-full sm:hidden">
-            Sign In
+          <Link href="/signin">
+            <Button
+              variant="outline"
+              className="w-full sm:hidden border-2 border-primary text-primary"
+            >
+              Sign In
+            </Button>
+          </Link>
+          <Button className="w-full xs:hidden bg-primary-foreground text-primary">
+            Get Started
           </Button>
-          <Button className="w-full xs:hidden">Get Started</Button>
         </div>
       </SheetContent>
     </Sheet>
-  );
-};
+  )
+}

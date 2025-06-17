@@ -1,5 +1,5 @@
-import type { Config } from "tailwindcss";
-import animate from "tailwindcss-animate";
+import type { Config } from "tailwindcss"
+import animate from "tailwindcss-animate"
 
 export default {
   darkMode: ["class"],
@@ -40,6 +40,11 @@ export default {
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
+        },
+        text: {
+          DEFAULT: "hsl(var(--text))",
+          foreground: "hsl(var(--text-foreground))",
+          muted: "hsl(var(--text-muted))",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -85,4 +90,4 @@ export default {
     },
   },
   plugins: [animate],
-} satisfies Config;
+} satisfies Config

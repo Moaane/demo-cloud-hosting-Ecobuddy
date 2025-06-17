@@ -1,0 +1,58 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String  @id @default(cuid())
+  email    String  @unique
+  password String
+  name     String?
+  points   Int     @default(0)
+  role     String  @default("user")
+
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+  UserHabits UserHabits[]
+
+  @@map("users")
+}
+
+model UserHabits {
+  id        String  @id @default(cuid())
+  userId    String
+  habitId   String
+  completed Boolean @default(false)
+
+  completedAt DateTime @updatedAt @map("updated_at")
+
+  user  User  @relation(fields: [userId], references: [id])
+  habit Habit @relation(fields: [habitId], references: [id])
+
+  @@map("user_habits")
+}
+
+model Habit {
+  id          String  @id @default(cuid())
+  title       String
+  description String?
+  points      Int
+  icon        String
+
+  createdAt  DateTime     @default(now()) @map("created_at")
+  updatedAt  DateTime     @updatedAt @map("updated_at")
+  UserHabits UserHabits[]
+
+  @@map("habits")
+}
